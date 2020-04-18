@@ -8,16 +8,30 @@
 3. Collaborative: You can prove someone else's model works correctly without talking to them
 4. Continuous: You can statistically monitor your models to correct abnormal behavior in production
 
-"In the deployment what I’ve typically found in talking to ML teams is right now it seems like a data scientist is expected to be a software engineer and, in some organizations, to be a master of DevOps as well. And so often the gap between data scientist and DevOps and software engineering is pretty broad; And when you have to wear all those hats it’s: how do you simplify that. And then from a monitoring standpoint, I always say that: if you knew the right answer then you wouldn't need machine learning. So, models can go wonky quickly in production without normal monitoring techniques and so you need to do statistical monitoring."
+"In the deployment what I’ve typically found in talking to ML teams is right now it seems like a data scientist is expected to be a software engineer and, in some organizations, to be a master of DevOps as well. And often the gap between data scientist and DevOps and software engineering is pretty broad; And when you have to wear all those hats it’s: how do you simplify that? Then from a monitoring standpoint, I always say that if you knew the right answer then you wouldn't need machine learning. Models can go wonky quickly in production without normal monitoring techniques, and so you need to do statistical monitoring."
 
-
+*Workflows*
 ```txt
-DevOps:
+DevOps
+------
 Code─>─Test─>─Deploy─├
-  └─<─Monitor───<────└
+  └─<───Monitor──<───└
 
-&#x00AC
-MLOps:
+MLOps
+-----
+Data runs   Code─>─├   Parameters─├
+ ├  └───>───Model runs──────<─────└
+ |         └─>─Models/metrics─>─Deploy─├
+ └───────<────────Monitor──────<───────└
+    
+```
+
+
+
+
+
+
+
 
 You are here: .
               ├── src
@@ -30,7 +44,7 @@ You are here: .
               ├── tasks.py
               ├── requirements.txt
               └── Dockerfile
-```
+
 
 
 
