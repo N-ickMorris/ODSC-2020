@@ -1,7 +1,10 @@
 ### The Future of MLOps and How Did We Get Here?
 ### Chris Sterry | Vice President of Operations | Dotscience
-
+```txt
 *Windows 10*
+```
+
+
 
 ## Linux Subsystem
 *Install Ubuntu 18.04 from the Microsoft Store*
@@ -9,10 +12,7 @@
 *Open Ubuntu and set up your username and password*
 
 Update Ubuntu
-```bash
-/.../.$ sudo apt-get update
-/.../.$ sudo apt-get install build-essential
-```
+
 
 Install desired python versions
 ```bash
