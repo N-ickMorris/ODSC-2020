@@ -31,13 +31,15 @@ Data runs   Code─>─├   Parameters
  
 MLOps Life Cycle
 ----------------
-
-
-
-        ──<──Engineered Data──<──
-                        |
-             Raw Data─>─├
-
+ ├─>─Metrics    Real-time users─>─├ 
+ ├                                ├
+Development─>─Deploy Models─>─Production
+     ├                            ├   ├
+     ├─<─Statistical Monitoring─<─└   ├
+     ├                                ├
+Model runs─<─Engineered Data─<─Real-time decisions
+                     |
+          Raw Data─>─├
 ```
 
 
