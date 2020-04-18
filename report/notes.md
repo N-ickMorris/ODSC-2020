@@ -1,5 +1,24 @@
 ### The Future of MLOps and How Did We Get Here?
 ### Chris Sterry | Vice President of Operations | Dotscience
+- They started this coming from the DevOps mindset (DevOps for ML)
+*MLOps requirements*
+1. Reproducible: You can re-train a model built 9 months ago and reproduce it within tolerance
+2. Accountable: You can recover the raw data, training data, and build procedure of every model in production
+3. Collaborative: You can prove someone else's model works correctly without talking to them
+4. Continuous: You can statistically monitor your models to correct abnormal behavior in production
+
+"In the deployment what I’ve typically found in talking to ML teams is right now it seems like a data scientist is expected to be a software engineer and, in some organizations, to be a master of DevOps as well. And so often the gap between data scientist and DevOps and software engineering is pretty broad; And when you have to wear all those hats it’s: how do you simplify that. And then from a monitoring standpoint, I always say that: if you knew the right answer then you wouldn't need machine learning. So, models can go wonky quickly in production without normal monitoring techniques and so you need to do statistical monitoring."
+
+
+
+
+
+
+
+
+
+
+
 - the
 
 *Windows 10*
