@@ -1,3 +1,6 @@
+# The Future of MLOps and How Did We Get Here?
+# Chris Sterry | Vice President of Operations | Dotscience
+
 *Windows 10*
 
 ## Linux Subsystem
