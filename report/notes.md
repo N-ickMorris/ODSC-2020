@@ -14,16 +14,30 @@
 ```txt
 DevOps
 ------
-Code─>─Test─>─Deploy─├
-  └─<───Monitor──<───└
+Code─>─Test─>─Deploy
+  ├               ├
+  └─<──Monitor─<──└
 
 MLOps
 -----
-Data runs   Code─>─├   Parameters─├
- ├  └───>───Model runs──────<─────└
- |         └─>─Models/metrics─>─Deploy─├
+Data runs   Code─>─├   Parameters
+ ├  ├              ├         ├
+ ├  └───>───Model runs───<───└
+ ├             ├ 
+ ├             └─>─Models/metrics─>─Deploy
+ ├                                     ├
  └───────<────────Monitor──────<───────└
-    
+ 
+ 
+MLOps Life Cycle
+----------------
+
+
+
+        ──<──Engineered Data──<──
+                        |
+             Raw Data─>─├
+
 ```
 
 
@@ -32,7 +46,7 @@ Data runs   Code─>─├   Parameters─├
 
 
 
-
+```txt
 You are here: .
               ├── src
               |   └── module
@@ -44,7 +58,7 @@ You are here: .
               ├── tasks.py
               ├── requirements.txt
               └── Dockerfile
-
+```
 
 
 
