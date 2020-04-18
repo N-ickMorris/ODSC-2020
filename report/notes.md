@@ -11,7 +11,26 @@
 "In the deployment what I’ve typically found in talking to ML teams is right now it seems like a data scientist is expected to be a software engineer and, in some organizations, to be a master of DevOps as well. And so often the gap between data scientist and DevOps and software engineering is pretty broad; And when you have to wear all those hats it’s: how do you simplify that. And then from a monitoring standpoint, I always say that: if you knew the right answer then you wouldn't need machine learning. So, models can go wonky quickly in production without normal monitoring techniques and so you need to do statistical monitoring."
 
 
+```txt
+DevOps:
+Code─>─Test─>─Deploy─├
+  └─<─Monitor───<────└
 
+&#x00AC
+MLOps:
+
+You are here: .
+              ├── src
+              |   └── module
+              |       └── .py source files
+              ├── test
+              |   └── .py test files
+              ├── setup.cfg
+              ├── setup.py
+              ├── tasks.py
+              ├── requirements.txt
+              └── Dockerfile
+```
 
 
 
