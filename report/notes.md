@@ -1,6 +1,7 @@
 ### The Future of MLOps and How Did We Get Here?
 ### Chris Sterry | Vice President of Operations | Dotscience
 - They started this coming from the DevOps mindset (DevOps for ML)
+
 *MLOps requirements*
 1. Reproducible: You can re-train a model built 9 months ago and reproduce it within tolerance
 2. Accountable: You can recover the raw data, training data, and build procedure of every model in production
