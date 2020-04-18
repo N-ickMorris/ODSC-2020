@@ -15,28 +15,28 @@
 DevOps
 ------
 Code─>─Test─>─Deploy
-  ├               ├
-  └─<──Monitor─<──└
+  |               |
+  └─<──Monitor─<──├
 
 MLOps
 -----
 Data runs   Code─>─├   Parameters
- ├  ├              ├         ├
- ├  └───>───Model runs───<───└
- ├             ├ 
- ├             └─>─Models/metrics─>─Deploy
- ├                                     ├
- └───────<────────Monitor──────<───────└
+ |  |              |         |
+ |  └───>───Model runs───<───├
+ |             | 
+ |             └─>─Models/metrics─>─Deploy
+ |                                     |
+ └───────<────────Monitor──────<───────├
 
 MLOps Life Cycle
 ----------------
                Raw Data
-                  ├
+                  |
  Training─<─Engineered Data─<─Real-time decisions
-     ├                                     ├
-Development─>─Deploy Models─>─Production─>─└
-     ├                            ├  ├
-     └─<─Statistical Monitoring─<─└  ├─<─Real-time users
+     |                                     |
+Development─>─Deploy Models─>─Production─>─├
+     |                            |  |
+     └─<─Statistical Monitoring─<─├  └─<─Real-time users
                    
 
  
