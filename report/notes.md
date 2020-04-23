@@ -1,6 +1,7 @@
 ### The Future of MLOps and How Did We Get Here?
 ### Chris Sterry | Vice President of Operations | Dotscience
 - They started this coming from the DevOps mindset (DevOps for ML)
+- They started an online community for MLOps(https://mlops-community-slack.com/) weekly talks with guests
 
 *MLOps requirements*
 1. Reproducible: You can re-train a model built 9 months ago and reproduce it within tolerance
@@ -10,24 +11,42 @@
 
 "In the deployment what I’ve typically found in talking to ML teams is right now it seems like a data scientist is expected to be a software engineer and, in some organizations, to be a master of DevOps as well. And often the gap between data scientist and DevOps and software engineering is pretty broad; And when you have to wear all those hats it’s: how do you simplify that? Then from a monitoring standpoint, I always say that if you knew the right answer then you wouldn't need machine learning. Models can go wonky quickly in production without normal monitoring techniques, and so you need to do statistical monitoring."
 
-*Workflows*
+*Operations*
 ```txt
 DevOps
 ------
+* Focused on code commits
 Code──>──Test──>──Deploy
   |                 |
   └──<──Monitor──<──├
 
+- Code: source code and unit test
+- Test: behavior test
+- Deploy: build and re-versioning
+- Monitor: track model quality over time
+
 MLOps
 -----
+* Focused on all the moving pieces that create data sets and models
 Data runs   Code   Parameters
  |  |        |      |
  |  └────────└──────└──>──Model runs──>──Models/metrics──>──Deploy
  |                                                            |
  └─────────────<────────────Monitor──────────<────────────────├
 
+- Data runs: raw/engineered data
+- Code: source code and unit test
+- Parameters: meta data and hyperparameter values
+- Model runs: training models
+- Models/metrics: final models and goodness of fit
+- Deploy: behavior test, build, and re-versioning
+- Monitor: track model quality over time
+
 MLOps Life Cycle
 ----------------
+1. Raw Data, Engineered Data: Building engineering pipelines for preparing data
+2. Training, Development: Fine tuning models for official release
+3. Deploy Model, Production, Statistical Monitoring: Pushing new model versions through CI/CD and being alerted on issues as models depreciate
                Raw Data
                   |
  Training──<──Engineered Data──<──Real-time decisions
@@ -35,118 +54,7 @@ MLOps Life Cycle
 Development──>──Deploy Models──>──Production──>──├
      |                                |  |
      └──<──Statistical Monitoring──<──├  └──<──Real-time users
-                   
-
- 
- 
- 
- 
- ├─>─Metrics    Real-time users─>─├ 
- ├                                ├
-
-     ├                            ├   ├
-     ├─<─Statistical Monitoring─<─└   ├
-
-
-                     |
-          
 ```
 
-
-
-
-
-
-
-```txt
-You are here: .
-              ├── src
-              |   └── module
-              |       └── .py source files
-              ├── test
-              |   └── .py test files
-              ├── setup.cfg
-              ├── setup.py
-              ├── tasks.py
-              ├── requirements.txt
-              └── Dockerfile
-```
-
-
-
-
-
-
-
-
-- the
-
-*Windows 10*
-
-```txt
-You are here: .
-              ├── src
-              |   └── module
-              |       └── .py source files
-              ├── test
-              |   └── .py test files
-              ├── setup.cfg
-              ├── setup.py
-              ├── tasks.py
-              ├── requirements.txt
-              └── Dockerfile
-```
-
-## Examples
-
-```py
-"""
-Testing the speeds of compilers
-
-https://docs.sympy.org/latest/modules/codegen.html#ufuncify-method
-https://ojensen.wordpress.com/2010/08/10/fast-ufunc-ish-hydrogen-solutions/
-https://stackoverflow.com/questions/36250303/fortran-sources-but-no-fortran-compiler-found
-"""
-
-
-import timeit
-import numpy as np
-from sympy import sin
-from sympy.abc import x, y
-from sympy.physics.hydrogen import R_nl
-from sympy.utilities.autowrap import ufuncify
-from sympy.utilities.lambdify import lambdify
-
-expr = x + y
-f = ufuncify((x, y), expr, backend='numpy')
-
-N = int(1e6)
-v1 = np.linspace(1, N, N)
-v2 = np.linspace(1, N, N)
-
-timeit.timeit('f(v1, v2)', 'from __main__ import f, v1, v2', number=10000)    
-
-timeit.timeit('v1 + v2', 'from __main__ import v1, v2', number=10000)    
-
-expr = x**2
-f = ufuncify((x), expr, backend='numpy')
-f(4)
-
-expr = sin(x)/x
-f = ufuncify((x), expr, backend='numpy')
-
-expr = R_nl(3, 1, x, 6)
-expr
-
-fn_lamb = lambdify(x, expr, 'numpy')
-fn_ufun = ufuncify((x), expr, backend='numpy')
-
-xx = np.linspace(0, 1, 5)
-fn_lamb(xx)
-fn_ufun(xx)
-
-timeit.timeit('fn_lamb(xx)', 'from __main__ import fn_lamb, xx', number=10000)    
-
-timeit.timeit('fn_ufun(xx)', 'from __main__ import fn_ufun, xx', number=10000)    
-
-```
+*Provenance*
+A provenance (precedence) diagram is a way to track the order of all operations for constructing a model. Storing the logic of this diagram in a program would allow us to query for any version of the data and model during construction.
