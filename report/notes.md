@@ -1,6 +1,6 @@
 ### The Future of MLOps and How Did We Get Here?
 ### Chris Sterry | Vice President of Operations | Dotscience
-- They started this coming from the DevOps mindset (DevOps for ML)
+- They started their implementation of MLOps coming from the DevOps mindset (DevOps for ML)
 - They started an online community for [MLOps](https://mlops-community-slack.com/) weekly talks with guests
 
 *MLOps requirements*
