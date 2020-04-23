@@ -57,4 +57,5 @@ Development──>──Deploy Models──>──Production──>──├
 ```
 
 *Provenance*
+
 A provenance (precedence) diagram is a way to track the order of all operations for constructing a model. Storing the logic of this diagram in a program would allow us to query for any version of the data and model during construction.
